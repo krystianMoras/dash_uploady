@@ -1,0 +1,52 @@
+{
+  "name": "dash_uploady",
+  "version": "0.1.0",
+  "description": "Dash component for uploading files.",
+  "main": "build/index.js",
+  "scripts": {
+    "start": "webpack-dev-server",
+    "validate-init": "python _validate_init.py",
+    "prepublishOnly": "npm run validate-init",
+    "build:js": "webpack --mode production",
+    "build": "npm run build:js && npm run build:py",
+    "build:py": "dash-generate-components ./src/lib/components dash_uploady -p package-info.json"
+  },
+  "author": "Krystian Moras <krystianmoras@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "@plotly/webpack-dash-dynamic-import": "^1.3.0",
+    "node-polyfill-webpack-plugin": "^1.1.4",
+    "ramda": "^0.26.1",
+    "@rpldy/uploady": "1.8.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.17.10",
+    "@babel/plugin-proposal-object-rest-spread": "^7.17.3",
+    "@babel/plugin-syntax-class-properties": "^7.12.13",
+    "@babel/preset-env": "^7.17.10",
+    "@babel/preset-react": "^7.16.7",
+    "babel-eslint": "^10.0.2",
+    "babel-loader": "^8.2.5",
+    "babel-plugin-transform-class-properties": "^6.24.1",
+    "copyfiles": "^2.4.1",
+    "css-loader": "^5.2.7",
+    "eslint": "^6.0.1",
+    "eslint-config-prettier": "^6.15.0",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-react": "^7.29.4",
+    "loader-utils": ">=1.4.2",
+    "npm": "^9.6.6",
+    "prop-types": "^15.8.1",
+    "react": "^16.14.0",
+    "react-docgen": "^5.4.0",
+    "react-dom": "^16.14.0",
+    "style-loader": "^3.3.1",
+    "styled-jsx": "^5.1.0",
+    "webpack": "^5.73.0",
+    "webpack-cli": "^4.10.0"
+  },
+  "engines": {
+    "node": ">=8.11.0",
+    "npm": ">=6.1.0"
+  }
+}
